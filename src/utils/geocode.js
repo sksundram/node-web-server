@@ -1,6 +1,6 @@
 const request = require('request');
-const keys = require('../api/keys');
-const geocodeKey = process.env.MAPBOX_TOKEN || keys.mapboxTokenKey;
+// const keys = require('../api/keys');
+const geocodeKey = process.env.MAPBOX_TOKEN;
 
 const geocode = (address, callback) => {
   const geocodeURL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json`;

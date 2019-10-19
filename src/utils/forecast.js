@@ -1,6 +1,6 @@
 const request = require('request');
-const keys = require('../api/keys');
-const forecastKey = process.env.DARKSKY_API_KEY || keys.darkskyApiKey;
+// const keys = require('../api/keys');
+const forecastKey = process.env.DARKSKY_API_KEY;
 
 const forecast = (lat, long, callback) => {
   const forecastURL = `https://api.darksky.net/forecast/${forecastKey}/${lat},${long}`;
