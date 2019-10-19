@@ -1,5 +1,6 @@
 const request = require('request');
 const keys = require('../api/keys');
+const geocodeKey = process.env.MAPBOX_TOKEN || keys.mapboxTokenKey;
 
 const geocode = (address, callback) => {
   const geocodeURL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json`;
@@ -7,7 +8,7 @@ const geocode = (address, callback) => {
     {
       url: geocodeURL,
       json: true,
-      qs: { access_token: keys.mapboxTokenKey, limit: 1 }
+      qs: { access_token: geocodeKey, limit: 1 }
     },
     (error, response) => {
       if (error) return callback('Unable to connect to location service!');
